@@ -1,14 +1,46 @@
 2222222222222
 
 A.  Explain what recursion is and when it is useful.
+  It occurs, when method calls upon itself. It is used when we don't know how many times should execute the program and
+  saves the memory.
     Explain what the |termination step| and |recursion step| are in a recursive method.
-
+  termination step - end of executing after particular time. It is used in order for not to run infinetely.
+  recursion step - method calls upon itself.
 B.  Describe the difference between a Queue and a Stack.
 
+   Stack is a vertical arrangement of links. It follows Last in First Out (LIFO). Example - plates in cafeteria.
+   Queue is a horizontal arrangement of links. It follows First in First Out(FIFO). Example - line in cafeteria.
+  
 C.  Write a class for an element of a doublely-linked list.
+public class Doublely {
+    public Doublely Next;
+    public Doublely Prev;
+    public Object obj;
 
+    public Doublely(Object obj, Doublely ele, Doublely prev){
+        this.obj = O;
+        this.Next = ele;
+        this.Prev = prev;
+    }
+    
+    public void append(Doublely Last){
+        this.Last().Next = Last;
+    }
+
+    public Doublely last(){
+        Doublely Temp = this;
+        while(Temp.Next != null){
+            Temp = Temp.Next;
+        }
+        return Temp;
+    }
+}
+  
 D.  Explain what a Merkle Tree is.  
+  Merkle tree is a hash tree which contain large data structures that allow us to validate the data efficiently.
     Describe the structure and purpose of a Merkle Tree.
     What is the Merkle root?
+  It is the main - parent hash. It is the element on the top of the tree that is the hash of all the data.
     What is the function of a certificate in this data structure?
-    
+  With the certificate we can return to the root and to any node needed to verify the document which was used to 
+  build the tree.
